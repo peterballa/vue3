@@ -19,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/search',
     name: 'Search',
     component: () => import('../views/Search.vue')
+  },
+  {
+    path: '/my-vuex-test',
+    name: 'My Vuex Test',
+    component: () => import('../views/MyVuexTest.vue')
   }
 ]
 

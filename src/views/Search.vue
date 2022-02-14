@@ -6,11 +6,12 @@
     <div v-for="name in matchingNames" :key="name">
       {{name}}
     </div>
+    <button @click="stopWatcher">Stop watcher</button>
   </div>
 </template>
 
 <script lang="ts">
-import {computed, ref} from "vue";
+import {computed, ref, watch, watchEffect} from "vue";
 
 export default {
   name: 'Search',
@@ -18,10 +19,22 @@ export default {
     const search = ref('');
     const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bowser', 'koopa', 'peach']);
 
+    const myCustomWatch = watch(search, () => {
+      console.log('watch function run');
+    });
+
+    watchEffect(() => {
+      console.log('watchEffect function ran', search.value);
+    });
+
+    const stopWatcher = () => {
+      myCustomWatch();
+    }
+
     const matchingNames = computed(() => {
       return names.value.filter((name) => name.includes(search.value));
     })
-    return {names, search, matchingNames};
+    return {names, search, matchingNames, stopWatcher};
   }
 }
 </script>
