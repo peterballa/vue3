@@ -15,12 +15,18 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue';
+import Module1 from '@/components/module1';
 
 export default defineComponent({
   name: 'Home',
   setup() {
     const firstName = ref('Peti');
     const lastName = ref('Balla');
+
+    Module1.greet(23,442);
+
+    console.log(Module1.myComputedPropertiesObject.sum(3,4));
+    console.log(Module1.myComputedPropertiesObject.distract(10,4));
 
     const fullName = computed(() => {
       return `${lastName.value} ${firstName.value}`;

@@ -11,9 +11,9 @@
 </template>
 
 <script lang="ts">
-import {computed, ref, watch, watchEffect} from "vue";
+import {computed, defineComponent, ref, watch, watchEffect} from "vue";
 
-export default {
+export default defineComponent({
   name: 'Search',
   setup() {
     const search = ref('');
@@ -34,7 +34,8 @@ export default {
     const matchingNames = computed(() => {
       return names.value.filter((name) => name.includes(search.value));
     })
+
     return {names, search, matchingNames, stopWatcher};
   }
-}
+})
 </script>
