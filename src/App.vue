@@ -1,36 +1,20 @@
 <template>
-  <div class="flex justify-center">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/search">Search</router-link> |
-    <router-link to="/my-vuex-test">My Vuex Test</router-link>
+  <div class="container mx-auto">
+    <div class="flex justify-center">
+      <router-link class="m-3" :to="{name: 'home'}">Home</router-link>
+      <router-link class="m-3" :to="{name: 'vue_ref'}">Vue Ref</router-link>
+      <router-link class="m-3" :to="{name: 'vue_computed_ref'}">Vue Computed Ref</router-link>
+      <router-link class="m-3" :to="{name: 'vue_lifecycle_hooks'}">Vue Lifecycle Hooks</router-link>
+      <router-link class="m-3" :to="{name: 'vue_watcher'}">Vue Watcher</router-link>
+      <router-link class="m-3" :to="{name: 'vue_component'}">Vue Component</router-link>
+      <router-link class="m-3" :to="{name: 'vuex'}">Vuex</router-link>
+      <router-link class="m-3" :to="{name: 'typescript'}">TypeScriptTypes</router-link>
+      <router-link class="m-3" :to="{name: 'tailwind'}">Tailwind</router-link>
+    </div>
+    <router-view/>
   </div>
-  <div class="my-3 text-center">
-    <button class="bg-gray-700 text-white font-bold rounded p-4" @click="callChildComponentMethod">Call Search component childMethod()</button>
-    <ChildComponent ref="child"/>
-  </div>
-  <router-view/>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 
-import {defineComponent, ref} from "vue";
-import ChildComponent from "@/components/ChildComponent.vue";
-
-export default defineComponent({
-  components: {ChildComponent},
-  name: 'App',
-  setup() {
-    const child = ref<typeof ChildComponent | null>(null);
-
-    const callChildComponentMethod = () => {
-      child.value?.childMethod();
-    }
-
-    return {
-      child,
-      callChildComponentMethod
-    }
-  }
-})
 </script>
