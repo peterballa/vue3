@@ -7,6 +7,9 @@
       'bg-green-500 text-white': type === 'success',
       'bg-yellow-500 text-black': type === 'warning'
   }">
+    <slot v-if="label === ''">
+
+    </slot>
     {{label}}
   </button>
 </template>

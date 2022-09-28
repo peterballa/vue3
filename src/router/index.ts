@@ -23,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/vueLifecycleHooks/VueLifecycleHooks.vue')
   },
   {
+    path: '/vue/rendering',
+    name: 'vue_rendering',
+    component: () => import('../views/vueRendering/VueRendering.vue')
+  },
+  {
     path: '/vue/watcher',
     name: 'vue_watcher',
     component: () => import('../views/vueWatcher/VueWatcher.vue')

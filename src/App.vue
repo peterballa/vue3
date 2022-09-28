@@ -5,6 +5,7 @@
       <router-link class="m-3" :to="{name: 'vue_ref'}">Vue Ref</router-link>
       <router-link class="m-3" :to="{name: 'vue_computed_ref'}">Vue Computed Ref</router-link>
       <router-link class="m-3" :to="{name: 'vue_lifecycle_hooks'}">Vue Lifecycle Hooks</router-link>
+      <router-link class="m-3" :to="{name: 'vue_rendering'}">Vue Rendering</router-link>
       <router-link class="m-3" :to="{name: 'vue_watcher'}">Vue Watcher</router-link>
       <router-link class="m-3" :to="{name: 'vue_component'}">Vue Component</router-link>
       <router-link class="m-3" :to="{name: 'vuex'}">Vuex</router-link>
